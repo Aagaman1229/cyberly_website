@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from .models import Article
+from .models import Articles
 
 class ArticleSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Article
+        model = Articles
         fields = '__all__'

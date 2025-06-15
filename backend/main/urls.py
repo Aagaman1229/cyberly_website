@@ -6,10 +6,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from main.views import article
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('main.urls')),  # If you have any
+    path('admin/', admin.site.urls), 
+    path('article/',article)
 ]
 
 if settings.DEBUG:
