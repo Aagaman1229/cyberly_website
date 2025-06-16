@@ -7,7 +7,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('main.urls')),  # This line includes all URLs from the "main" app
+    path('article/', include('main.urls')),
+    path('researches/',include('Research.urls'))
 ]
 
 if settings.DEBUG:
