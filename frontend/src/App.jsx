@@ -5,12 +5,16 @@ import Article from './pages/Article';
 import Research from './pages/Research';
 import About from './pages/About';
 import './styles/App.css';
+import logo from './assets/logo_transparent.png';
 
 
 function App() {
   return (
     <BrowserRouter>
       <nav className="navbar">
+        <div className="logo-container">
+          <img src={logo} alt="Logo" className="logo" />
+        </div>
         <ul>
           <li>
             <Link to="/">Home</Link>

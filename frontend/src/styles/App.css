@@ -14,22 +14,40 @@ html, body, #root {
 }
 
 /* Navbar styles */
+/* Navbar styles */
 .navbar {
-  width: 100%;
-
-  padding: 1rem 2rem;
+  background-color: #CADCFC;
   display: flex;
-  justify-content: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Logo Container */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  max-width: 140px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: transform 0.2s ease-in-out,background-color 0.2s ease-in-out;
+}
+.logo:hover {
+  transform: scale(1.05);
+  background-color: #00246B;
+}
 /* Navbar menu */
 .navbar ul {
-  list-style: none;
   display: flex;
+  list-style: none;
+  margin-left: 3rem; /* reduced space between logo and menu */
   gap: 2rem;
-  margin: 0;
-  padding: 0;
+  flex: 1;
+  justify-content: center; /* align closer to the logo */
 }
 
 .navbar li {
@@ -40,17 +58,11 @@ html, body, #root {
   text-decoration: none;
   color: #00246B;
   font-weight: bold;
-  transition: color 0.2s ease-in-out;
+  display: inline-block; /* Needed for transform to work well */
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .navbar a:hover {
-  color: #a89871;
-}
-
-/* Page content */
-h1 {
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 2rem;
-  color: #023e8a;
+  transform: scale(1.1);
+  color: #1049bb; /* Optional: add a color change on hover */
 }
