@@ -1,0 +1,56 @@
+/* Reset and base layout */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  background-color: #CADCFC;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar styles */
+.navbar {
+  width: 100%;
+
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Navbar menu */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #00246B;
+  font-weight: bold;
+  transition: color 0.2s ease-in-out;
+}
+
+.navbar a:hover {
+  color: #a89871;
+}
+
+/* Page content */
+h1 {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 2rem;
+  color: #023e8a;
+}

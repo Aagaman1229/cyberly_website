@@ -4,12 +4,13 @@ import Home from "./pages/Home";
 import Article from './pages/Article';
 import Research from './pages/Research';
 import About from './pages/About';
+import './styles/App.css';
 
 
 function App() {
   return (
     <BrowserRouter>
-      <nav>
+      <nav className="navbar">
         <ul>
           <li>
             <Link to="/">Home</Link>
