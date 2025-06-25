@@ -3,11 +3,22 @@
   max-width: 900px;
   margin: 3rem auto;
   padding: 2rem;
-  background-color: #CADCFC;
-  box-shadow: #84aff8;
+  background-color: inherit; /* Inherits from body (light or dark) */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Default box shadow (light theme) */
   border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
+  color: inherit; /* Text color from theme */
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Light Theme Box Shadow */
+body.light-theme .home-container {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Light theme box shadow */
+}
+
+/* Dark Theme Box Shadow */
+body.dark-theme .home-container {
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2); /* Dark theme box shadow */
 }
 
 .intro-image {
@@ -16,17 +27,29 @@
   height: auto;
   margin-bottom: 2rem;
   border-radius: 12px;
+  transition: transform 0.5s ease-in-out;
+}
+.intro-image:hover {
+  transform: scale(1.02);
 }
 
 .home-container h1 {
   font-size: 2.5rem;
-  color: #00246B;
   margin-bottom: 1rem;
+  color: inherit; /* Inherit from theme */
+  animation: glow 3s infinite ease-in-out;
 }
 
 .home-container p {
   font-size: 1.15rem;
-  color: #1049bb;
   margin: 0.5rem 0;
   line-height: 1.6;
+  color: inherit;
+}
+
+/* Optional: Add a soft glowing animation */
+@keyframes glow {
+  0% { text-shadow: 0 0 10px rgba(0,0,0,0.1); }
+  50% { text-shadow: 0 0 20px rgba(0,0,0,0.2); }
+  100% { text-shadow: 0 0 10px rgba(0,0,0,0.1); }
 }

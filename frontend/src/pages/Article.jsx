@@ -8,7 +8,6 @@ function Article() {
       .then((res) => res.json())
       .then((json) => setArticles(json))
       .catch((err) => console.error("Fetch error:", err));
-    console.log(articles)
   }, []);
   return (
     <div>

@@ -1,19 +1,22 @@
-import React from "react";
-import { BrowserRouter, Route, Routes, Link, Navigate } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+import { useState } from 'react';
 import Home from "./pages/Home";
 import Article from './pages/Article';
 import Research from './pages/Research';
 import About from './pages/About';
 import './styles/App.css';
-import logo from './assets/logo_transparent.png';
-
+import lightLogo from './assets/logo_transparent.png';
+import darkLogo from './assets/inv_t_logo.png';
+import ThemeToggle from './components/Theme';
 
 function App() {
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light"); // Ensure theme is initialized from localStorage
+  const logoImage = theme === "dark" ? darkLogo : lightLogo;
   return (
     <BrowserRouter>
       <nav className="navbar">
         <div className="logo-container">
-          <img src={logo} alt="Logo" className="logo" />
+          <img src={logoImage} alt="Logo" className="logo" />
         </div>
         <ul>
           <li>
@@ -29,36 +32,16 @@ function App() {
             <Link to="/about">About</Link>
           </li>
         </ul>
+        <ThemeToggle  theme={theme} setTheme={setTheme}/> {/* Pass theme and setTheme */}
       </nav>
       <Routes>
-        <Route 
-          path="/" 
-          element={
-              <Home />
-          }
-        />
-        <Route 
-          path="/article" 
-          element={
-              <Article />
-          }
-        />
-        <Route 
-          path="/research" 
-          element={
-              <Research />
-          }
-        />
-        <Route 
-          path="/about" 
-          element={
-            <About />
-          }
-        />
+        <Route path="/" element={<Home theme={theme} />} /> {/* Pass theme to Home */}
+        <Route path="/article" element={<Article />} />
+        <Route path="/research" element={<Research />} />
+        <Route path="/about" element={<About />} />
       </Routes>
-      
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
