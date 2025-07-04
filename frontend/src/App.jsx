@@ -10,7 +10,7 @@ import darkLogo from './assets/inv_t_logo.png';
 import ThemeToggle from './components/Theme';
 
 function App() {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light"); // Ensure theme is initialized from localStorage
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark"); // Ensure theme is initialized from localStorage
   const logoImage = theme === "dark" ? darkLogo : lightLogo;
   return (
     <BrowserRouter>

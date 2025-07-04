@@ -8,6 +8,8 @@ from .serializers import ArticleSummarySerializer, ArticleDetailSerializer
 def article_list(request):
     objs = Articles.objects.all()
     serializer = ArticleSummarySerializer(objs, many=True)
+    for article in serializer.data:
+        print(article.get('cover_image'))
     return Response(serializer.data)
 
 @api_view(['GET'])
